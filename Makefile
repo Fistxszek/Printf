@@ -2,14 +2,15 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
-SRC = 
+SRC = ft_printf.c \
+hex_printer.c
 OBJ = $(SRC:.c=.o)
 NAME = libftprintf.a 
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(MAKE) -C ./Work_Libft 
+	$(MAKE) -C ./Libft 
 	@$(AR) $(ARFLAGS) $@ $(OBJ)
 	@ranlib $@
 
@@ -17,11 +18,11 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	$(MAKE) clean -C ./Work_Libft
+	$(MAKE) clean -C ./Libft
 	@rm -f $(OBJ)
 
 fclean: clean
-	$(MAKE) fclean -C ./Work_Libft
+	$(MAKE) fclean -C ./Libft
 	@rm -f $(NAME)
 
 re: fclean all

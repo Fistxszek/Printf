@@ -5,23 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: korzecho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 19:20:03 by korzecho          #+#    #+#             */
-/*   Updated: 2024/04/08 19:20:04 by korzecho         ###   ########.fr       */
+/*   Created: 2024/04/23 17:49:59 by korzecho          #+#    #+#             */
+/*   Updated: 2024/04/23 17:50:01 by korzecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft.h"
-# include <unistd.h>
+# include "Libft/libft.h"
+# include <stdio.h>
 # include <stdlib.h>
-# include <stddef.h>
-# include <stdint.h>
+# include <unistd.h>
+# include <stdarg.h>
 
-int             ft_printf(const char *format, ...);
-void			ft_putchar_fd(char c, int fd);
-void			ft_putstr_fd(char *s, int fd);
-void			ft_putnbr_fd(int n, int fd);
-int				ft_strlen(char *arg);
-#endif
+int	put_hex(unsigned long long nbr, char format);
+int	ft_printf(const char *format, ...);
+
+# endif
