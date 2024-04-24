@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int	put_hex(unsigned long long nbr, char format);
+int	hex_printer(unsigned long long nbr, char format);
+int	unsigned_printer(unsigned int nbr);
 int	ft_printf(const char *format, ...);
 # endif

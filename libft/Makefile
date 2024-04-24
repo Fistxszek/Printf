@@ -1,5 +1,5 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -I.Printf/includes/
 AR = ar
 ARFLAGS = rcs
 #Source files

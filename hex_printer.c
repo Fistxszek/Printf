@@ -41,17 +41,8 @@ int	print_hex(unsigned long long nbr, char format)
 	return (1);
 }
 
-int	put_hex(unsigned long long nbr, char format)
+int	hex_printer(unsigned long long nbr, char format)
 {
 	print_hex(nbr, format);
 	return (count_hex_len(nbr));
 }
-
-// int main ()
-// {
-// 	unsigned long long a = 87385744684;
-// 	int i = 0;
-
-// 	put_hex(a, 'x');
-// 	return 0;
-// }

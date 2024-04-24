@@ -10,15 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <unistd.h>
-// #include <stdarg.h>
-// #include "hex_printer.c"
-// #include "Work_Libft/ft_putchar_fd.c"
-// #include "Work_Libft/ft_putstr_fd.c"
-// #include "Work_Libft/ft_putnbr_fd.c"
-// #include "Work_Libft/ft_strlen.c"
 #include "ft_printf.h"
 
 int print_char(va_list args)
@@ -43,6 +34,8 @@ int print_int(va_list args)
 	length = 0;
 	a = va_arg(args, int);
 	ft_putnbr_fd(a, 1);
+	if (a < 0)
+		length++;
 	while (a /= 10)
 		length++;
 	return (length + 1);
@@ -51,7 +44,12 @@ int print_hex_long(va_list args, char format)
 {
 	unsigned long long a;
 	a = va_arg(args, unsigned long long);
-	return (put_hex(a, format));
+	if (a == 0)
+	{
+		ft_putchar_fd('0', 1);
+		return (1);
+	}
+	return (hex_printer(a, format));
 }
 int print_unsigned_int(va_list args)
 {
@@ -60,10 +58,7 @@ int print_unsigned_int(va_list args)
 
 	length = 0;
 	a = va_arg(args, unsigned int);
-	ft_putnbr_fd((int)a, 1);
-	while (a /= 10)
-		length++;
-	return (length + 1);
+	return (unsigned_printer(a));
 }
 int	check_arg(char c, va_list args)
 {
@@ -114,10 +109,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (printed);
 }
-// int main ()
-// {
-// 	printf("test: \n");
-// 	int i = ft_printf("%c",'a');
-// 	printf("\nlen: %d -- end\n", i);
-// 	return 0;
-// }
