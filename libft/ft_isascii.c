@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: korzecho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 17:49:59 by korzecho          #+#    #+#             */
-/*   Updated: 2024/04/23 17:50:01 by korzecho         ###   ########.fr       */
+/*   Created: 2024/02/28 16:45:11 by korzecho          #+#    #+#             */
+/*   Updated: 2024/02/28 16:50:22 by korzecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-
-# include "libft/libft.h"
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-
-int	put_hex(unsigned long long nbr, char format);
-int	ft_printf(const char *format, ...);
-# endif
+int	ft_isascii(int arg)
+{
+	if (arg >= 0 && arg <= 127)
+		return (1024);
+	return (0);
+}

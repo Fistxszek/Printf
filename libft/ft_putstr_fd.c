@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: korzecho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 17:49:59 by korzecho          #+#    #+#             */
-/*   Updated: 2024/04/23 17:50:01 by korzecho         ###   ########.fr       */
+/*   Created: 2024/03/22 13:04:10 by korzecho          #+#    #+#             */
+/*   Updated: 2024/03/22 13:04:11 by korzecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	len;
 
-# include "libft/libft.h"
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-
-int	put_hex(unsigned long long nbr, char format);
-int	ft_printf(const char *format, ...);
-# endif
+	len = ft_strlen(s);
+	write(fd, s, len);
+}

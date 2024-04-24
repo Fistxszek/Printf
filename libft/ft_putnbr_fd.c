@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: korzecho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 17:49:59 by korzecho          #+#    #+#             */
-/*   Updated: 2024/04/23 17:50:01 by korzecho         ###   ########.fr       */
+/*   Created: 2024/03/22 13:20:13 by korzecho          #+#    #+#             */
+/*   Updated: 2024/03/22 13:20:15 by korzecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nbr;
+	char	c[10];
+	short	i;
 
-# include "libft/libft.h"
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-
-int	put_hex(unsigned long long nbr, char format);
-int	ft_printf(const char *format, ...);
-# endif
+	nbr = n;
+	i = 0;
+	if (n == 0)
+	{
+		write (fd, "0", 1);
+		return ;
+	}
+	if (nbr < 0)
+	{
+		nbr *= -1;
+		write (fd, "-", 1);
+	}
+	while (nbr)
+	{
+		c[i++] = (nbr % 10) + 48;
+		nbr /= 10;
+	}
+	while (i > 0)
+		write(fd, &c[--i], 1);
+}

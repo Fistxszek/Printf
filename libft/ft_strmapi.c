@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: korzecho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 17:49:59 by korzecho          #+#    #+#             */
-/*   Updated: 2024/04/23 17:50:01 by korzecho         ###   ########.fr       */
+/*   Created: 2024/03/22 12:21:20 by korzecho          #+#    #+#             */
+/*   Updated: 2024/03/22 12:21:22 by korzecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	int		i;
+	int		len;
+	char	*result;
 
-# include "libft/libft.h"
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-
-int	put_hex(unsigned long long nbr, char format);
-int	ft_printf(const char *format, ...);
-# endif
+	i = 0;
+	len = ft_strlen((char *)s);
+	result = (char *)malloc(len + 1);
+	if (!result)
+		return (NULL);
+	while (s[i])
+	{
+		result[i] = f(i, s[i]);
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
+}

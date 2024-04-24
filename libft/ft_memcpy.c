@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: korzecho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 17:49:59 by korzecho          #+#    #+#             */
-/*   Updated: 2024/04/23 17:50:01 by korzecho         ###   ########.fr       */
+/*   Created: 2024/03/02 15:21:48 by korzecho          #+#    #+#             */
+/*   Updated: 2024/03/02 16:09:21 by korzecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+{
+	unsigned int	i;
 
-# include "libft/libft.h"
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-
-int	put_hex(unsigned long long nbr, char format);
-int	ft_printf(const char *format, ...);
-# endif
+	if (!dest)
+		return (NULL);
+	i = 0;
+	while (i < n)
+	{
+		*(char *)(dest + i) = *(char *)(src + i);
+		i++;
+	}
+	return (dest);
+}

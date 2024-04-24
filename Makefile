@@ -10,7 +10,7 @@ NAME = libftprintf.a
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(MAKE) -C ./Libft 
+	$(MAKE) -C ./libft 
 	@$(AR) $(ARFLAGS) $@ $(OBJ)
 	@ranlib $@
 
@@ -18,11 +18,11 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	$(MAKE) clean -C ./Libft
+	$(MAKE) clean -C ./libft
 	@rm -f $(OBJ)
 
 fclean: clean
-	$(MAKE) fclean -C ./Libft
+	$(MAKE) fclean -C ./libft
 	@rm -f $(NAME)
 
 re: fclean all

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: korzecho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 17:49:59 by korzecho          #+#    #+#             */
-/*   Updated: 2024/04/23 17:50:01 by korzecho         ###   ########.fr       */
+/*   Created: 2024/03/22 15:10:40 by korzecho          #+#    #+#             */
+/*   Updated: 2024/03/22 15:10:41 by korzecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void	*result;
 
-# include "libft/libft.h"
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-
-int	put_hex(unsigned long long nbr, char format);
-int	ft_printf(const char *format, ...);
-# endif
+	if (nmemb <= 0 && size <= 0)
+		return (ft_strdup(""));
+	if (nmemb >= SIZE_MAX || size >= SIZE_MAX || nmemb * size >= SIZE_MAX)
+		return (NULL);
+	result = malloc(size * nmemb);
+	if (!result)
+		return (NULL);
+	ft_bzero(result, (nmemb * size));
+	return (result);
+}
