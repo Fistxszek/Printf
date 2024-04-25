@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	count_hex_len(unsigned long long n)
+static int	count_hex_len(unsigned long long n)
 {
 	size_t	digits;
 
@@ -27,7 +27,7 @@ int	count_hex_len(unsigned long long n)
 	return (digits);
 }
 
-int	print_hex(unsigned long long nbr, char format)
+static int	print_hex(unsigned long long nbr, char format)
 {
 	static char	upper_digits[] = "0123456789ABCDEF";
 	static char	lower_digits[] = "0123456789abcdef";

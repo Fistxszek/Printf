@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	count_unsigned_len(unsigned int n)
+static int	count_unsigned_len(unsigned int n)
 {
 	size_t	digits;
 
@@ -27,7 +27,7 @@ int	count_unsigned_len(unsigned int n)
 	return (digits);
 }
 
-int	print_unsigned(unsigned int nbr)
+static int	print_unsigned(unsigned int nbr)
 {
 	static char	unsigned_digits[] = "0123456789";
 
@@ -37,7 +37,7 @@ int	print_unsigned(unsigned int nbr)
 	return (1);
 }
 
-int	unsigned_printer(unsigned int nbr)
+static int	unsigned_printer(unsigned int nbr)
 {
 	print_unsigned(nbr);
 	return (count_unsigned_len(nbr));

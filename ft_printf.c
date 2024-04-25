@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	check_arg(char c, va_list args)
+static int	check_arg(char c, va_list args)
 {
 	int	printed_chars;
 
