@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I.Printf/includes/
+CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
 #Source files

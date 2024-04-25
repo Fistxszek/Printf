@@ -19,7 +19,12 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int	hex_printer(unsigned long long nbr, char format);
-int	unsigned_printer(unsigned int nbr);
 int	ft_printf(const char *format, ...);
-# endif
+int	print_char(va_list args);
+int	print_int(va_list args);
+int	print_string(va_list args);
+int	print_unsigned_int(va_list args);
+int	print_pointer(va_list args);
+int	hex_printer(unsigned long long nbr, char format);
+int	print_hex_long(va_list args, char format);
+#endif

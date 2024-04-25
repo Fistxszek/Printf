@@ -14,7 +14,7 @@
 
 int	count_hex_len(unsigned long long n)
 {
-	size_t digits;
+	size_t	digits;
 
 	digits = 0;
 	if (n == 0)
@@ -45,4 +45,17 @@ int	hex_printer(unsigned long long nbr, char format)
 {
 	print_hex(nbr, format);
 	return (count_hex_len(nbr));
+}
+
+int	print_hex_long(va_list args, char format)
+{
+	unsigned long long	a;
+
+	a = va_arg(args, unsigned long long);
+	if (a == 0)
+	{
+		ft_putchar_fd('0', 1);
+		return (1);
+	}
+	return (hex_printer(a, format));
 }

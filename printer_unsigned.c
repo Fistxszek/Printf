@@ -14,7 +14,7 @@
 
 int	count_unsigned_len(unsigned int n)
 {
-	size_t digits;
+	size_t	digits;
 
 	digits = 0;
 	if (n == 0)
@@ -41,4 +41,12 @@ int	unsigned_printer(unsigned int nbr)
 {
 	print_unsigned(nbr);
 	return (count_unsigned_len(nbr));
+}
+
+int	print_unsigned_int(va_list args)
+{
+	unsigned int	a;
+
+	a = va_arg(args, unsigned int);
+	return (unsigned_printer(a));
 }
