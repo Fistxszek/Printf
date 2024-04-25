@@ -1,14 +1,14 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I./includes/
 AR = ar
 ARFLAGS = rcs
 SRC = ft_printf.c \
-printer_char.c \
-printer_hex.c \
-printer_int.c \
-printer_pointer.c \
-printer_string.c \
-printer_unsigned.c
+srcs/printer_char.c \
+srcs/printer_hex.c \
+srcs/printer_int.c \
+srcs/printer_pointer.c \
+srcs/printer_string.c \
+srcs/printer_unsigned.c
 OBJ = $(SRC:.c=.o)
 NAME = libftprintf.a 
 

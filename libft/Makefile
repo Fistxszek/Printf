@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I../includes/
 AR = ar
 ARFLAGS = rcs
 #Source files
